@@ -1,5 +1,5 @@
 services:
-  candidat_db:
+  candidatdb:
     container_name: Candidat-Database
     image: 'postgres:latest'
     environment:
@@ -10,12 +10,12 @@ services:
     volumes:
       - ./candidatstorage:/data/postgres
 
-  candidat_ms:
+  candidatms:
     container_name: Candidat-MS
-    image: candidat_ms:latest
     build:
       context: .
       dockerfile: Dockerfile
+    image: candidatms:latest
     env_file: .env
     ports:
       - "${SPRING_CANDIDAT_PORT}:8002"

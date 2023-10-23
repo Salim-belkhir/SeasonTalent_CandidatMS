@@ -5,15 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/try")
+@RequestMapping("/")
 public class Try {
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String index() {
         return "Hello World!";
     }
 
-    @GetMapping("/goodbye")
+    @GetMapping("/candidat")
     public String goodbye() {
         return "Goodbye World!";
     }

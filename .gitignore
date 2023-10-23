@@ -34,7 +34,7 @@ build/
 
 
 ### Docker Volumes ###
-candidat_db
+candidatstorage
 
 ### Environment ###
 .env

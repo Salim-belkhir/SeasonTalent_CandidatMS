@@ -9,6 +9,8 @@ services:
       - "${CANDIDAT_DB_PORT}"
     volumes:
       - ./candidatstorage:/data/postgres
+      - ./db_candidat_init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: ["-d", "/docker-entrypoint-initdb.d/init.sql"]
 
   candidatms:
     container_name: Candidat-MS

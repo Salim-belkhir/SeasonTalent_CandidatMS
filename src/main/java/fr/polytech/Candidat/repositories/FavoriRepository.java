@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface FavoriRepository extends JpaRepository<Favori, Long> {
-    @Query("select f from favoris f where f.idCandidat = :idCandidat")
+    @Query("select f from Favori f where f.id.idCandidat = :idCandidat")
     Favori findByIdCandidat(@Param("idCandidat") Long idCandidat);
 
-    @Query("select f from favoris f where f.idEmploi = :idEmploi")
+    @Query("select f from Favori f where f.id.idEmploi = :idEmploi")
     Favori findByIdRecruteur(@Param("idEmploi") Long idEmploi);
 }

@@ -10,6 +10,6 @@ public interface AvisRepository extends JpaRepository<Avis, Long> {
     Avis findByIdRecruteur(Long idRecruteur);
     Avis findByIdAvis(Long idAvis);
 
-    @Query("SELECT a FROM avis a WHERE a.idEmploi = :idEmploi")
+    @Query("SELECT a FROM Avis a WHERE a.emploi.idEmploi = :idEmploi")
     Avis findByIdEmploi(@Param("idEmploi") Long idEmploi);
 }

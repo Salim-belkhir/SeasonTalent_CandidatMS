@@ -2,9 +2,13 @@ package fr.polytech.Candidat.models;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "avis")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Avis {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "avis_id_seq")
@@ -17,4 +21,5 @@ public class Avis {
     @OneToOne
     @JoinColumn(name = "idEmploi")
     private Emploi emploi;
+
 }

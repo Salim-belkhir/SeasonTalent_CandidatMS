@@ -7,10 +7,7 @@ import fr.polytech.Candidat.services.CandidatService;
 import jakarta.ws.rs.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,19 +21,20 @@ public class CandidatController {
     private CandidatService candidatService;
 
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<Candidat>> getAllCandidates() {
         List<Candidat> candidats = candidatService.getAllCandidates();
         return ResponseEntity.ok(candidats);
     }
 
-    @GetMapping("/recommendations")
-    public ResponseEntity<List<Candidat>> getRecommendations(OffreDTO offre) {
+    @PostMapping("/recommendations")
+    public ResponseEntity<List<Candidat>> getRecommendations(@RequestBody OffreDTO offre) {
+        if (offre == null) return ResponseEntity.badRequest().build();
         List<Candidat> candidats = candidatService.getRecommendations(offre);
         return ResponseEntity.ok(candidats);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Candidat> getCandidatById(@PathVariable Long id) {
         try{
             Candidat candidat = candidatService.getCandidatById(id);

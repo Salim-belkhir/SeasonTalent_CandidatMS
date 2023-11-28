@@ -4,6 +4,7 @@ package fr.polytech.Candidat.models.dto;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Value
 @Getter
@@ -13,7 +14,7 @@ public class OffreDTO {
     private Long idOffre;
     private String titre;
     private String descr;
-    private String competences;
+    private List<String> competencesRequises;
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private String salaire;

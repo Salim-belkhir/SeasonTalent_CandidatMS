@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Docker Volumes ###
+candidatstorage
+db_candidat_init
+
+### Environment ###
+.env

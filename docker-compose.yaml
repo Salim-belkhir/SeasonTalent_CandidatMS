@@ -1,0 +1,23 @@
+services:
+  candidatdb:
+    container_name: Candidat-Database
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=${CANDIDAT_DB_NAME}'
+    env_file: .env
+    ports:
+      - "${CANDIDAT_DB_PORT}"
+    volumes:
+      - ./candidatstorage:/data/postgres
+      - ./db_candidat_init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: ["-d", "/docker-entrypoint-initdb.d/init.sql"]
+
+  candidatms:
+    container_name: Candidat-MS
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: candidatms:latest
+    env_file: .env
+    ports:
+      - "${SPRING_CANDIDAT_PORT}:8002"

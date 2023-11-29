@@ -15,8 +15,8 @@ public class Favori {
         this.id = new FavoriId();
     }
 
-    public Favori(Long idCandidat, Long idEmploi) {
-        this.id = new FavoriId(idCandidat, idEmploi);
+    public Favori(Long idCandidat, Long idRecruteur) {
+        this.id = new FavoriId(idCandidat, idRecruteur);
     }
 
 
@@ -28,11 +28,11 @@ public class Favori {
         this.id.setIdCandidat(idCandidat);
     }
 
-    public Long getIdEmploi() {
-        return this.id.getIdEmploi();
+    public Long getIdRecruteur() {
+        return this.id.getIdRecruteur();
     }
 
-    public void setIdEmploi(Long idEmploi) {
-        this.id.setIdEmploi(idEmploi);
+    public void setIdRecruteur(Long idRecruteur) {
+        this.id.setIdRecruteur(idRecruteur);
     }
 }

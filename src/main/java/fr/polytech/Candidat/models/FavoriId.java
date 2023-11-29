@@ -15,9 +15,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FavoriId  implements Serializable {
-    @Column(name = "id_candidat")
+    @Column(name = "idCandidat")
     private Long idCandidat;
 
-    @Column(name = "id_emploi")
-    private Long idEmploi;
+    @Column(name = "idRecruteur")
+    private Long idRecruteur;
 }

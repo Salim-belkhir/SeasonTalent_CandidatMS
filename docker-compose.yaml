@@ -6,7 +6,7 @@ services:
       - 'POSTGRES_DB=${CANDIDAT_DB_NAME}'
     env_file: .env
     ports:
-      - "${CANDIDAT_DB_PORT}"
+      - "${CANDIDAT_DB_PORT}:5432"
     volumes:
       - ./candidatstorage:/data/postgres
       - ./db_candidat_init.sql:/docker-entrypoint-initdb.d/init.sql
